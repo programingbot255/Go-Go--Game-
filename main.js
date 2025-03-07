@@ -22,34 +22,6 @@ var sketchProc = function(processingInstance) {
   keyReleased = function () {
       keys[keyCode] = false;
   };
-
-  // Modify canvas size for mobile responsiveness
-var resizeCanvas = function() {
-    var canvas = document.getElementById("canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-};
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-
-// Convert touch events to mouse events
-var handleTouchStart = function(event) {
-    pressed = true;
-    clicked = true;
-};
-var handleTouchEnd = function(event) {
-    pressed = false;
-};
-var handleTouchMove = function(event) {
-    mouseX = event.touches[0].clientX;
-    mouseY = event.touches[0].clientY;
-    event.preventDefault();
-};
-
-document.addEventListener("touchstart", handleTouchStart, false);
-document.addEventListener("touchend", handleTouchEnd, false);
-document.addEventListener("touchmove", handleTouchMove, false);
-
   
   //Button object
   var Button = (function() {
@@ -454,14 +426,14 @@ document.addEventListener("touchmove", handleTouchMove, false);
             star: this.addSound("https://www.kasandbox.org/programming-sounds/rpg/metal-chime.mp3"),
             birdCollect: this.addSound("https://assets.codepen.io/5126815/sound-game-start.mp3")
           };
-           this.sounds = {
-               lava: getSound("rpg/water-bubble"),
-              bird: getSound("rpg/giant-yah"),
-               spike: getSound("rpg/giant-hyah"),
-              wall: getSound("rpg/hit-thud"),
-               lazer: getSound("retro/laser2"),
-               star: getSound("rpg/metal-chime"),
-               birdCollect: getSound("sound-game-start")};
+          // this.sounds = {
+          //     lava: getSound("rpg/water-bubble"),
+          //     bird: getSound("rpg/giant-yah"),
+          //     spike: getSound("rpg/giant-hyah"),
+          //     wall: getSound("rpg/hit-thud"),
+          //     lazer: getSound("retro/laser2"),
+          //     star: getSound("rpg/metal-chime"),
+          // };
           this.shake = 0;
           this.shakedown = 0.1;
           this.cam = {
